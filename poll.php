@@ -2,7 +2,13 @@
 
 switch ($argv[1]) {
   case 'start':
-    include 'start.php';
+    include "classes/cmdln.php";
+    include "classes/file.php";
+
+    $args = CmdLn::parse();
+    var_dump($args);
+    $survey = File::load_survey($args['survey']);
+    var_dump($survey);
     break;
 
   case 'answer':

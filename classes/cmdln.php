@@ -2,17 +2,16 @@
 
 class CmdLn {
 
-  public static function parse($argv){
+  public static function parse(){
     $args = array();
-
-    switch ($argv[1]) {
+    switch ($_SERVER['argv'][1]) {
       case 'start':
-        $args['survey'] = $argv[2];
-        $args['email'] = $argv[3];
+        $args['survey'] = $_SERVER['argv'][2];
+        $args['email'] = $_SERVER['argv'][3];
         break;
 
       case 'answer':
-        $args['answer'] = $argv[2];
+        $args['answer'] = $_SERVER['argv'][2];
         break;
 
       case 'evaluate':

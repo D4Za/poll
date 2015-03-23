@@ -13,14 +13,15 @@ class File {
       if (strstr($row, '?')) {
         $countquestion++;
         $question = new Question();
-        $question->text = $row;
+        $question->text = trim($row);
         $survey->questions[$countquestion] = $question;
       } else {
         $answer = new Answer();
-        $answer->text = $row;
         if(strstr($row, '*')) {
           $answer->is_right = true;
+          $row = str_replace("*", "", $row);
         }
+        $answer->text = trim($row);
         $survey->questions[$countquestion]->answers[] = $answer;
       }
     }
