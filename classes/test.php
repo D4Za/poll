@@ -38,7 +38,7 @@ class Test {
   private function delete_answers($question){
     foreach ($question->answers as $answer) {
       $key = array_search($answer->number, $this->answers);
-      if($key){
+      if($key !== false){
         unset($this->answers[$key]);
       }
     }

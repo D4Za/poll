@@ -1,8 +1,8 @@
-Frage1?
-a
-*b
-c
-Frage2?
-*1
-2
-3
+Welches Tier ist ein Saeugetier?
+Fisch
+*Kamel
+Adler
+Was ist die Hauptstadt von Deutschland?
+Bonn
+Dresden
+*Berlin

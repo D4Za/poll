@@ -70,9 +70,19 @@ class File {
     return $test;
   }
 
+  /**
+   * Speichert den Prüfungsbogen
+   * @param Test $test
+   */
   public static function save_test($test){
     $test_file = fopen('test.txt', 'w');
     fwrite($test_file, $test->to_string());
     fclose($test_file);
+  }
+
+  public static function save_log($result){
+    $log_file = fopen('log.txt', 'a');
+    fwrite($log_file, $result . "\r\n");
+    fclose($log_file);
   }
 }

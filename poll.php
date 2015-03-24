@@ -1,12 +1,14 @@
 <?php
 
+include 'classes/cmdln.php';
+include 'classes/file.php';
+include 'classes/survey.php';
+include 'classes/test.php';
+include 'classes/output.php';
+include 'classes/evaluate.php';
+
 switch ($argv[1]) {
   case 'start':
-    include 'classes/cmdln.php';
-    include 'classes/file.php';
-    include 'classes/survey.php';
-    include 'classes/test.php';
-    include 'classes/output.php';
 
     $args = CmdLn::parse();
     $survey = File::load_survey($args['survey']);
@@ -17,11 +19,6 @@ switch ($argv[1]) {
     break;
 
   case 'answer':
-    include 'classes/cmdln.php';
-    include 'classes/file.php';
-    include 'classes/test.php';
-    include 'classes/survey.php';
-    include 'classes/output.php';
 
     $args = CmdLn::parse();
     $test = File::load_test();
@@ -31,10 +28,19 @@ switch ($argv[1]) {
     $survey->mark_answer($test);
     File::save_test($test);
     Output::print_survey($survey);
+
     break;
 
   case 'evaluate':
-    echo 'evaluate';
+
+    $test = File::load_test();
+    $survey = File::load_survey($test->filename);
+    $survey->number();
+    $survey->mark_answer($test);
+    $result = Evaluate::evaluate_test($test, $survey);
+    File::save_log($result);
+    Output::print_result($result);
+
     break;
 
   default:

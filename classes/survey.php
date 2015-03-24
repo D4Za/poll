@@ -31,11 +31,10 @@ class Survey {
     foreach ($this->questions as $key => $question){
       foreach ($question->answers as $answer) {
         if($given_answer == $answer->number){
-          $mark = $key;
+          return $question;
         }
       }
     }
-    return $this->questions[$mark];
   }
 
   /**

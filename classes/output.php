@@ -24,4 +24,10 @@ class Output {
     }
   }
 
+  public static function print_result($result){
+    print_r("\n");
+    print_r($result);
+    print_r("\n");
+  }
+
 }
