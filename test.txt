@@ -1,8 +1,2 @@
-Frage 1?
-a
-*b
-c
-Frage 2?
-*1
-2
-3
+survey.txt
+dsa@rcs.de

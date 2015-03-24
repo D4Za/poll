@@ -2,6 +2,10 @@
 
 class CmdLn {
 
+  /**
+   * Kommandozeile parsen
+   * @return array
+   */
   public static function parse(){
     $args = array();
     switch ($_SERVER['argv'][1]) {
