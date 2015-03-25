@@ -1,2 +1,4 @@
 dsa@rcs.de | survey.txt | 2/2
 jg@rcs.de | survey.txt | 2/2
+dsa@rcs.de | survey.txt | 0/2
+dsa@rcs.de | survey.txt | Es wurden nicht alle Fragen beantwortet

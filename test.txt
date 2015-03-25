@@ -1,4 +1,3 @@
 survey.txt
-jg@rcs.de
-1.2
-2.3
+dsa@rcs.de
+2.1

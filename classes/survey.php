@@ -41,6 +41,7 @@ class Survey {
    * Markiert die Antworten im Fragebogen
    * @param Test $test
    */
+  // sollte nicht hier sein
   public function mark_answer($test){
     foreach ($this->questions as $key => $question){
       foreach ($question->answers as $answer) {
